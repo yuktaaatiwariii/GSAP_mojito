@@ -1,23 +1,83 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
-
 @import "tailwindcss";
+@layer theme, base, components, utilities;
 
 @font-face {
-    font-family: "Modern Negra";
-    src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
+  font-family: 'Modern Negra Demo';
+  src: url('/fonts/Modern Negra Demo.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+   font-display: block; 
+}
+
+@font-face {
+  font-family: 'DM Serif Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmseriftext/v13/rnCw-xZa_krGokauCeNq1wWyWfG1UVoNMrY.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF;
+}
+
+@font-face {
+  font-family: 'DM Serif Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmseriftext/v13/rnCw-xZa_krGokauCeNq1wWyWfG1X1oN.woff2) format('woff2');
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: 'DM Serif Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmseriftext/v13/rnCu-xZa_krGokauCeNq1wWyWfqFXUIJ.woff2) format('woff2');
+  unicode-range: U+0100-02BA;
+}
+
+@font-face {
+  font-family: 'DM Serif Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmseriftext/v13/rnCu-xZa_krGokauCeNq1wWyWfSFXQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF;
+}
+
+/* Mona Sans — italic */
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: italic;
+  font-weight: 200 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/monasans/v4/o-0ZIpQmx24alC5A4PNr4C5OaxRsfNNlKbCePevtuXOm.woff2) format('woff2');
+}
+
+/* Mona Sans — normal */
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: normal;
+  font-weight: 200 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/monasans/v4/o-0bIpQmx24alC5A4PNB6Ryti20_6n1iPHjc5a7duw.woff2) format('woff2');
+}
+
+@theme {
+  --font-serif: "DM Serif Text", serif;
+  --font-sans: "Mona Sans", sans-serif;
 }
 
 @theme {
     --color-yellow: #e7d393;
     --color-white-100: #efefef;
     --font-sans: "Mona Sans", sans-serif;
-    --font-modern-negra: "Modern Negra", sans-serif;
+    --font-modern-negra: "Modern Negra Demo", sans-serif;
     --font-serif: "DM Serif Text", serif;
 }
+
 
 html,
 body {
@@ -76,7 +136,8 @@ body {
         }
 
         p {
-            @apply font-modern-negra text-3xl -mb-2;
+            font-family: "Modern Negra Demo";
+            @apply text-3xl -mb-2;
         }
 
         a {
@@ -96,7 +157,8 @@ body {
         @apply relative z-10 min-h-dvh w-full border border-transparent;
 
         h1 {
-            @apply md:mt-32 mt-40 text-8xl md:text-[20vw] leading-none text-center font-modern-negra;
+            
+            @apply md:mt-32 mt-40 text-8xl md:text-[20vw] leading-none text-center font-modern-negra ;
         }
 
         .left-leaf {
