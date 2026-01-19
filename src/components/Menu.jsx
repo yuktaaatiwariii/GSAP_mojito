@@ -46,7 +46,7 @@ const Menu = () => {
     loopTl.current
       .to(contentRef.current, {
         xPercent: 0,
-        duration: 1,
+        duration: 1.5,
         ease: 'power2.out',
       })
       .to({}, { duration: 5 }) // wait in center
@@ -58,6 +58,15 @@ const Menu = () => {
       .set(contentRef.current, {
         xPercent: -100,
       })
+
+      gsap.fromTo('#title', { opacity: 0 }, { opacity: 1, duration: 1 });
+	
+	gsap.fromTo('.details h2', { yPercent: 100, opacity: 0 }, {
+	 yPercent: 0, opacity: 100, ease: 'power1.inOut'
+	})
+	gsap.fromTo('.details p', { yPercent: 100, opacity: 0 }, {
+	 yPercent: 0, opacity: 100, ease: 'power1.inOut'
+	})
 
   }, [currentIndex])
 
@@ -87,9 +96,9 @@ const Menu = () => {
       </nav>
 
       {/* CONTENT */}
-      <div ref={contentRef} className="content" >
+      <div  className="content" >
         <div className="cocktail">
-          <img
+          <img ref={contentRef}
             src={currentCocktail.image}
             className="object-contain"
             alt={currentCocktail.name}
