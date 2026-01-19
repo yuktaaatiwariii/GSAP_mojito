@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @layer theme, base, components, utilities;
 
+
 @font-face {
   font-family: 'Modern Negra Demo';
   src: url('/fonts/Modern Negra Demo.ttf') format('truetype');
@@ -376,7 +377,7 @@ body {
         }
 
         .cocktail {
-            @apply flex-center mt-10;
+            @apply flex-center mt-4;
 
             img {
                 @apply object-contain h-[60vh];
@@ -384,10 +385,10 @@ body {
         }
 
         .recipe {
-            @apply flex max-md:flex-col gap-10 md:items-center justify-between w-full lg:absolute bottom-0;
+            @apply flex max-md:flex-col gap-10 md:items-center justify-between w-full lg:absolute bottom-10;
 
             .info {
-                @apply space-y-4 lg:translate-y-20;
+                @apply space-y-1 p-6 lg:translate-y-20;
 
                 #title {
                     @apply font-modern-negra md:text-6xl text-3xl text-yellow max-w-40;
